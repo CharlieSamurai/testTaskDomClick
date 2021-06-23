@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_ANSWER, NEXT_QUESTON } from '../../../Redux/ActionsTypes/ActionsTypes';
 import { useHistory } from "react-router";
-
+import { difficultyCheker } from '../difficultyCheker';
 
 const MultipleQuestion = ({ props }) => {
+  console.log(props)
 
   const history = useHistory();
 
@@ -36,7 +37,8 @@ const MultipleQuestion = ({ props }) => {
         question: props.question,
         userAnswer: userAnswers,
         correctAnswer: props.correct_answer,
-        questionDifficulty: props.difficulty
+        questionDifficulty: props.difficulty,
+        questionDifficultyNubmer: difficultyCheker(props.difficulty)
       }
     });
     if (compareLength.answersList.length === compareLength.questionList.length - 1) {

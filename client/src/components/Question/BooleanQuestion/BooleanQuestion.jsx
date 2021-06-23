@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_ANSWER, NEXT_QUESTON } from '../../../Redux/ActionsTypes/ActionsTypes';
 import { useHistory } from "react-router";
+import { difficultyCheker } from '../difficultyCheker';
 
 
 const BooleanQuestion = ({ props }) => {
@@ -24,7 +25,8 @@ const BooleanQuestion = ({ props }) => {
         question: props.question,
         userAnswer: e.target.innerText,
         correctAnswer: props.correct_answer,
-        questionDifficulty: props.difficulty
+        questionDifficulty: props.difficulty,
+        questionDifficultyNubmer: difficultyCheker(props.difficulty)
       }
     });
     if (compareLength.answersList.length === compareLength.questionList.length - 1) {
