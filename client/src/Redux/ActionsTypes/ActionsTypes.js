@@ -1,0 +1,3 @@
+export const GET_QUESTIONS_LIST = 'GET_QUESTIONS_LIST';
+export const ADD_ANSWER = 'ADD_ANSWER';
+export const NEXT_QUESTON = 'NEXT_QUESTION';
